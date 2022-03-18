@@ -1,0 +1,80 @@
+<p-splitter layout="horizontal">
+
+  <ng-template pTemplate>
+
+    <!-- VER CLIENTES -->
+    <p-card>
+      <ng-template pTemplate="header">
+        <h1>Clientes</h1>
+      </ng-template>
+      <table>
+            <tr>
+                <th>Codigo articulo</th>
+                <th>Nombre</th>
+                <th>precioUnidad</th>
+                <th>unidadesStock</th>
+                <th>stockSeguridad</th>
+            </tr>
+            <tr *ngFor="let item of this.servicio.articulos; let i = index">
+                <th>{{item.codArticulo}}</th>
+                <th>{{item.Nombre}}</th>
+                <th>{{item.precioUnidad}}</th>
+                <th>{{item.unidadesStock}}</th>
+                <th>{{item.stockSeguridad}}</th>
+            </tr>
+      </table>
+  </p-card>
+  </ng-template>
+  <ng-template pTemplate>
+
+    <!--AÑADIR ARTICULO-->
+    <p-card>
+      <ng-template pTemplate="header">
+        <h1>Articulos</h1>
+      </ng-template>
+      <form (ngSubmit)="agregarClientes()" >
+          <div class="grid p-fluid">
+            <div class="col">
+                <div class="p-inputgroup-addon">
+                    <h4 class="p-inputgroup-addon">Código de articulo</h4>
+                    <input type="number" name="codArticulo" placeholder="Código del articulo" [(ngModel)]="this.articuloNuevo.codArticulo">
+                    <h4 class="p-inputgroup-addon">Nombre</h4>
+                    <input type="text" name="Nombre" placeholder="Nombre" [(ngModel)]="this.articuloNuevo.Nombre">
+                  </div>
+            </div>
+          </div>
+          <div class="grid p-fluid">
+            <div class="col">
+                <div class="p-inputgroup-addon">
+                  <h4 class="p-inputgroup-addon">Descripción</h4>
+                    <input type="text" name="Descripcion" placeholder="Descripción" [(ngModel)]="this.articuloNuevo.Descripcion">
+                    <h4 class="p-inputgroup-addon">Precio por unidad</h4>
+                    <input type="number" name="precioUnidad" placeholder="Precio por unidad" [(ngModel)]="this.articuloNuevo.precioUnidad">
+                  </div>
+            </div>
+          </div>
+          <div class="grid p-fluid">
+            <div class="col">
+                <div class="p-inputgroup-addon">
+                  <h4 class="p-inputgroup-addon">Unidades en stock</h4>
+                    <input type="number" name="unidadesStock" placeholder="Unidades en stock" [(ngModel)]="this.articuloNuevo.unidadesStock">
+                    <h4 class="p-inputgroup-addon">Stock de seguridad</h4>
+                    <input type="number" name="stockSeguridad" placeholder="Stock de seguridad" [(ngModel)]="this.articuloNuevo.stockSeguridad">
+                  </div>
+            </div>
+          </div>
+          <div class="grid p-fluid">
+            <div class="col">
+                <div class="p-inputgroup-addon">
+                    <h4 class="p-inputgroup-addon">Imagen</h4>
+                    <input type="text" name="imagen" placeholder="Imagen" [(ngModel)]="this.articuloNuevo.imagen">
+                  </div>
+            </div>
+          </div>
+          <div class="p-inputgroup-addon">
+            <p-button icon="pi pi-check" type="submit"></p-button>
+          </div>
+    </form>
+  </p-card>
+  </ng-template>
+</p-splitter>
