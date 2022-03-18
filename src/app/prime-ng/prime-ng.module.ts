@@ -12,6 +12,7 @@ import {DialogModule} from 'primeng/dialog';
 import {SplitterModule} from 'primeng/splitter';
 import {TableModule} from 'primeng/table';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {DropdownModule} from 'primeng/dropdown';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     SplitterModule,
     CardModule,
     TableModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    DropdownModule
 
   ],
   exports:[
@@ -42,7 +44,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     SplitterModule,
     CardModule,
     TableModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    DropdownModule
   ]
 })
 export class PrimeNgModule { }

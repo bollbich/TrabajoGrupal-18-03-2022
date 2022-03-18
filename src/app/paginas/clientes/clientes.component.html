@@ -9,65 +9,84 @@
       </ng-template>
       <table>
             <tr>
-                <th>Codigo articulo</th>
+                <th>Codigo de cliente</th>
                 <th>Nombre</th>
-                <th>precioUnidad</th>
-                <th>unidadesStock</th>
-                <th>stockSeguridad</th>
+                <th>Apellidos</th>
+                <th>Empresa</th>
+                <th>Puesto</th>
+                <th>Código postal</th>
+                <th>Provincia</th>
+                <th>Telefono</th>
+                <th>Fecha de nacimiento</th>
             </tr>
-            <tr *ngFor="let item of this.servicio.articulos; let i = index">
-                <th>{{item.codArticulo}}</th>
-                <th>{{item.Nombre}}</th>
-                <th>{{item.precioUnidad}}</th>
-                <th>{{item.unidadesStock}}</th>
-                <th>{{item.stockSeguridad}}</th>
+            <tr *ngFor="let item of this.servicio.clientes let i = index">
+                <th>{{item.codCliente}}</th>
+                <th>{{item.nombre}}</th>
+                <th>{{item.apellidos}}</th>
+                <th>{{item.empresa}}</th>
+                <th>{{item.puesto}}</th>
+                <th>{{item.codigoPostal}}</th>
+                <th>{{item.provincia}}</th>
+                <th>{{item.telefono}}</th>
+                <th>{{item.fechaNacimiento}}</th>
+                <th><p-button icon="pi pi-delete" (onClick)="Delete(item)"></p-button></th>
             </tr>
       </table>
   </p-card>
   </ng-template>
   <ng-template pTemplate>
 
-    <!--AÑADIR ARTICULO-->
+    <!--AÑADIR Cliente-->
     <p-card>
       <ng-template pTemplate="header">
-        <h1>Articulos</h1>
+        <h1>Clientes</h1>
       </ng-template>
       <form (ngSubmit)="agregarClientes()" >
           <div class="grid p-fluid">
             <div class="col">
                 <div class="p-inputgroup-addon">
-                    <h4 class="p-inputgroup-addon">Código de articulo</h4>
-                    <input type="number" name="codArticulo" placeholder="Código del articulo" [(ngModel)]="this.articuloNuevo.codArticulo">
+                    <h4 class="p-inputgroup-addon">Código de cliente</h4>
+                    <input type="number" name="codCliente" placeholder="Código del cliente" [(ngModel)]="this.clienteNuevo.codCliente">
                     <h4 class="p-inputgroup-addon">Nombre</h4>
-                    <input type="text" name="Nombre" placeholder="Nombre" [(ngModel)]="this.articuloNuevo.Nombre">
+                    <input type="text" name="Nombre" placeholder="Nombre" [(ngModel)]="this.clienteNuevo.nombre">
                   </div>
             </div>
           </div>
           <div class="grid p-fluid">
             <div class="col">
                 <div class="p-inputgroup-addon">
-                  <h4 class="p-inputgroup-addon">Descripción</h4>
-                    <input type="text" name="Descripcion" placeholder="Descripción" [(ngModel)]="this.articuloNuevo.Descripcion">
-                    <h4 class="p-inputgroup-addon">Precio por unidad</h4>
-                    <input type="number" name="precioUnidad" placeholder="Precio por unidad" [(ngModel)]="this.articuloNuevo.precioUnidad">
+                  <h4 class="p-inputgroup-addon">Apellidos</h4>
+                    <input type="text" name="Descripcion" placeholder="Descripción" [(ngModel)]="this.clienteNuevo.apellidos">
+                    <h4 class="p-inputgroup-addon">Empresa</h4>
+                    <input type="text" name="empresa" placeholder="Empresa" [(ngModel)]="this.clienteNuevo.empresa">
                   </div>
             </div>
           </div>
           <div class="grid p-fluid">
             <div class="col">
                 <div class="p-inputgroup-addon">
-                  <h4 class="p-inputgroup-addon">Unidades en stock</h4>
-                    <input type="number" name="unidadesStock" placeholder="Unidades en stock" [(ngModel)]="this.articuloNuevo.unidadesStock">
-                    <h4 class="p-inputgroup-addon">Stock de seguridad</h4>
-                    <input type="number" name="stockSeguridad" placeholder="Stock de seguridad" [(ngModel)]="this.articuloNuevo.stockSeguridad">
+                  <h4 class="p-inputgroup-addon">Puesto</h4>
+                    <input type="text" name="puesto" placeholder="Puesto" [(ngModel)]="this.clienteNuevo.puesto">
+                    <h4 class="p-inputgroup-addon">Código postal</h4>
+                    <input type="number" name="codigoPostal" placeholder="Código postal" [(ngModel)]="this.clienteNuevo.codigoPostal">
                   </div>
             </div>
           </div>
           <div class="grid p-fluid">
             <div class="col">
                 <div class="p-inputgroup-addon">
-                    <h4 class="p-inputgroup-addon">Imagen</h4>
-                    <input type="text" name="imagen" placeholder="Imagen" [(ngModel)]="this.articuloNuevo.imagen">
+                  <h4 class="p-inputgroup-addon">Provincia</h4>
+                    <input type="text" name="provincia" placeholder="Puesto" [(ngModel)]="this.clienteNuevo.provincia">
+                    <h4 class="p-inputgroup-addon">Teléfono</h4>
+                    <input type="number" name="telefono" placeholder="Telefono" [(ngModel)]="this.clienteNuevo.telefono">
+                  </div>
+            </div>
+          </div>
+          <div class="grid p-fluid">
+            <div class="col">
+                <div class="p-inputgroup-addon">
+                  <h4 class="p-inputgroup-addon">Fecha de nacimiento</h4>
+                    <input type="date" name="fechaNacimiento" placeholder="Fecha de nacimiento" [(ngModel)]="this.clienteNuevo.fechaNacimiento">
                   </div>
             </div>
           </div>

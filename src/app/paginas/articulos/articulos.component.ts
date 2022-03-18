@@ -33,4 +33,9 @@ export class ArticulosComponent implements OnInit {
       this.servicio.agregarArticulo(this.articuloNuevo);
   }
 
+  Delete(articulo:Articulo)
+  {
+      this.servicio.borrarArticulo(articulo);
+  }
+
 }

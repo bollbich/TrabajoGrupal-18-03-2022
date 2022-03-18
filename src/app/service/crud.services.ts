@@ -67,16 +67,21 @@ public clienteNuevo:Cliente = {
        return [...this._clientes];
     }
 
-  agregarCliente()
+  agregarCliente(cliente:Cliente)
   {
-    const exite = this._clientes.filter(clie => clie == this.clienteNuevo);
+    const exite = this._clientes.filter(clie => clie == cliente);
     if(exite.length==0)
     {
-      if(this.clienteNuevo.nombre!='')
+      if(cliente.nombre!='')
       {
-        this._clientes.push(this.clienteNuevo);
+        this._clientes.push(cliente);
       }
     }
+  }
+
+  borrarCliente(cliente:Cliente)
+  {
+    this._clientes = this._clientes.filter(clie => clie !== cliente);
   }
 
   //ARTICULOS=====================
@@ -116,6 +121,11 @@ public clienteNuevo:Cliente = {
 
   }
 
+  borrarArticulo(articulo:Articulo)
+  {
+    this._articulos = this._articulos.filter(artc => artc !== articulo);
+  }
+
   //COMPRAS=====================
 
   private _compras:Compra[] = [
@@ -149,12 +159,17 @@ public clienteNuevo:Cliente = {
        return [...this._compras];
     }
 
-  agregarCompra()
+  agregarCompra(compra:Compra)
   {
-    const exite = this._compras.filter(compr => compr == this.compraNuevo);
+    const exite = this._compras.filter(compr => compr == compra);
     if(exite.length==0)
     {
-      this._compras.push(this.compraNuevo);
+      this._compras.push(compra);
     }
+  }
+
+  borrarCompra(compra:Compra)
+  {
+    this._compras = this._compras.filter(comp => comp !== compra);
   }
 }
