@@ -28,8 +28,8 @@
                 <th>{{item.codigoPostal}}</th>
                 <th>{{item.provincia}}</th>
                 <th>{{item.telefono}}</th>
-                <th>{{item.fechaNacimiento}}</th>
-                <th><p-button icon="pi pi-delete" (onClick)="Delete(item)"></p-button></th>
+                <th>{{item.fechaNacimiento| date: 'yyyy-MM-dd'}}</th>
+                <th><p-button icon="pi pi-delete" (onClick)="Delete(item)">Delete</p-button></th>
             </tr>
       </table>
   </p-card>
@@ -91,7 +91,7 @@
             </div>
           </div>
           <div class="p-inputgroup-addon">
-            <p-button icon="pi pi-check" type="submit"></p-button>
+            <p-button icon="pi pi-check" type="submit">Insertar/Actualizar</p-button>
           </div>
     </form>
   </p-card>

@@ -39,6 +39,7 @@ public clienteNuevo:Cliente = {
     };
 
     public compraNuevo:Compra = {
+      idCompra: 0,
         articulo: this.articuloNuevo,
         cliente: this.clienteNuevo,
         fecha: new Date()
@@ -69,14 +70,30 @@ public clienteNuevo:Cliente = {
 
   agregarCliente(cliente:Cliente)
   {
-    const exite = this._clientes.filter(clie => clie == cliente);
-    if(exite.length==0)
+    const existe = this._clientes.filter(clie => clie.codCliente == cliente.codCliente);
+
+
+    let agregarCliente:Cliente = {
+      codCliente: cliente.codCliente,
+      nombre:cliente.nombre,
+      apellidos: cliente.apellidos,
+      empresa: cliente.empresa,
+      puesto: cliente.puesto,
+      codigoPostal: cliente.codigoPostal,
+      provincia: cliente.provincia,
+      telefono: cliente.telefono,
+      fechaNacimiento: cliente.fechaNacimiento
+    };
+
+    if(existe.length!=0)
     {
-      if(cliente.nombre!='')
-      {
-        this._clientes.push(cliente);
-      }
+      let index = this._clientes.indexOf(existe[0]);
+      this._clientes[index] = agregarCliente;
     }
+    else{
+      this._clientes.push(agregarCliente);
+    }
+
   }
 
   borrarCliente(cliente:Cliente)
@@ -105,6 +122,8 @@ public clienteNuevo:Cliente = {
 
   agregarArticulo(articulo:Articulo)
   {
+    const existe = this._articulos.filter(artc => artc.codArticulo == articulo.codArticulo);
+
     let articuloNuevo:Articulo = {
       codArticulo: articulo.codArticulo,
       Nombre:articulo.Nombre,
@@ -114,11 +133,15 @@ public clienteNuevo:Cliente = {
       stockSeguridad: articulo.stockSeguridad,
       imagen: articulo.imagen
     };
-    console.log(this._articulos);
-    console.log(articulo);
 
-    this._articulos.push(articuloNuevo);
-
+    if(existe.length!=0)
+    {
+      let index = this._articulos.indexOf(existe[0]);
+      this._articulos[index] = articuloNuevo;
+    }
+    else{
+      this._articulos.push(articuloNuevo);
+    }
   }
 
   borrarArticulo(articulo:Articulo)
@@ -130,6 +153,7 @@ public clienteNuevo:Cliente = {
 
   private _compras:Compra[] = [
     {
+      idCompra: 0,
       articulo: {
         codArticulo: 1,
         Nombre:'Coco',
@@ -159,12 +183,26 @@ public clienteNuevo:Cliente = {
        return [...this._compras];
     }
 
-  agregarCompra(compra:Compra)
+  agregarCompra(idCompra:number, idCliente:number, idArticulo:number, fecha:Date)
   {
-    const exite = this._compras.filter(compr => compr == compra);
-    if(exite.length==0)
+    let clienteNuevo = this._clientes.filter(clie => clie.codCliente == idCliente);
+    let articuloNuevo = this._articulos.filter(art => art.codArticulo == idArticulo);
+
+    let compraNueva:Compra = {
+      idCompra: idCompra,
+      cliente: clienteNuevo[0],
+      articulo: articuloNuevo[0],
+      fecha: fecha
+    }
+    const existe = this._compras.filter(compr => compr.idCompra == idCompra);
+
+    if(existe.length==0)
     {
-      this._compras.push(compra);
+      this._compras.push(compraNueva);
+    }
+    else{
+      let index = this._compras.indexOf(existe[0]);
+      this._compras[index] = compraNueva;
     }
   }
 

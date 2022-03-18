@@ -16,13 +16,12 @@
                   <th>stockSeguridad</th>
               </tr>
               <tr *ngFor="let item of this.servicio.articulos; let i = index">
-                <th>{{i}}</th>
                   <th>{{item.codArticulo}}</th>
                   <th>{{item.Nombre}}</th>
                   <th>{{item.precioUnidad}}</th>
                   <th>{{item.unidadesStock}}</th>
                   <th>{{item.stockSeguridad}}</th>
-                <th><p-button icon="pi pi-delete" (onClick)="Delete(item)"></p-button></th>
+                <th><p-button icon="pi pi-delete" (onClick)="Delete(item)">Delete</p-button></th>
 
               </tr>
         </table>
@@ -75,7 +74,7 @@
               </div>
             </div>
             <div class="p-inputgroup-addon">
-              <p-button icon="pi pi-check" type="submit"></p-button>
+              <p-button icon="pi pi-check" type="submit">Insertar/Actualizar</p-button>
             </div>
       </form>
     </p-card>

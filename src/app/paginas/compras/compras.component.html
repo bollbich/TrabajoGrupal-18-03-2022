@@ -9,16 +9,17 @@
       </ng-template>
       <table>
         <tr>
+          <th>id de compra</th>
             <th>Codigo cliente</th>
             <th>Codigo articulo</th>
             <th>fecha</th>
-
         </tr>
         <tr *ngFor="let item of this.servicio.compras; let i = index">
+            <th>{{item.idCompra}}</th>
             <th>{{item.cliente.codCliente}}</th>
             <th>{{item.articulo.codArticulo}}</th>
-            <th>{{item.fecha}}</th>
-            <th><p-button icon="pi pi-delete" (onClick)="Delete(item)"></p-button></th>
+            <th>{{item.fecha | date: 'yyyy-MM-dd'}}</th>
+            <th><p-button icon="pi pi-delete" (onClick)="Delete(item)">Delete</p-button></th>
         </tr>
   </table>
   </p-card>
@@ -34,13 +35,13 @@
           <div class="grid p-fluid">
             <div class="col">
               <h4 class="p-inputgroup-addon">Clientes</h4>
-              <p-dropdown [options]="this.servicio.clientes" [(ngModel)]="this.selectedClient" optionLabel="nombre"></p-dropdown>
+              <p-dropdown [options]="this.servicio.clientes" name="codCliente" [(ngModel)]="this.selectedClient" optionLabel="nombre" optionValue="codCliente"></p-dropdown>
             </div>
           </div>
           <div class="grid p-fluid">
             <div class="col">
               <h4 class="p-inputgroup-addon">Articulos</h4>
-              <p-dropdown [options]="this.servicio.articulos" [(ngModel)]="this.selectedArticulo" optionLabel="Nombre"></p-dropdown>
+              <p-dropdown [options]="this.servicio.articulos" name="codArticulo" [(ngModel)]="this.selectedArticulo" optionLabel="Nombre" optionValue="codArticulo"></p-dropdown>
             </div>
           </div>
           <div class="grid p-fluid">
@@ -48,11 +49,13 @@
                 <div class="p-inputgroup-addon">
                   <h4 class="p-inputgroup-addon">Fecha</h4>
                   <input type="date" name="fecha" placeholder="Fecha" [(ngModel)]="this.fecha">
+                  <h4 class="p-inputgroup-addon">Id de compra</h4>
+                  <input type="number" name="idCompra" placeholder="id de compra" [(ngModel)]="this.idCompra" >
                 </div>
             </div>
           </div>
           <div class="p-inputgroup-addon">
-            <p-button icon="pi pi-check" type="submit"></p-button>
+            <p-button icon="pi pi-check" type="submit">Insertar/Actualizar</p-button>
           </div>
     </form>
   </p-card>

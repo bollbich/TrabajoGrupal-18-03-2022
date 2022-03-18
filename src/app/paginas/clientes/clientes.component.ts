@@ -35,4 +35,9 @@ export class ClientesComponent implements OnInit {
   {
       this.servicio.borrarCliente(cliente);
   }
+
+  Captura(cliente:Cliente)
+  {
+    this.servicio.agregarCliente(this.clienteNuevo);
+  }
 }
