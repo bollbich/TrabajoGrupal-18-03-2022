@@ -2,6 +2,7 @@
   <div class="flex flex-wrap card-container ">
   <div class="flex flex-row flex-wrap card-container">
     <!-- Columna izquierda para la lista de artículos -->
+    <p-scrollPanel [style]="{width: '25p0x', height: '400px'}">
     <div class="flex align-items-center justify-content-center text-white border-round m-2">
 
           <table responsiveLayout="scroll">
@@ -45,6 +46,9 @@
       </table>
 
   </div>
+ 
+
+</p-scrollPanel>
   <!-- Columna derecha para formulario-->
   <div class="flex align-items-center justify-content-center text-white border-round m-2" style="margin-left: 20px">
 
@@ -58,10 +62,10 @@
           <div class="col">
             <div class="p-inputgroup">
               <span class="p-inputgroup-addon"><i>Código</i></span>
-              <input type="text"  name="codArticulo" pInputText placeholder="Ej.- 123" [(ngModel)]="this.articuloNuevo.codArticulo"/>
+              <input type="text"  name="codArticulo"  placeholder="Ej.- 123" [(ngModel)]="this.articuloNuevo.codArticulo"/>
               <span class="separador"></span>
               <span class="p-inputgroup-addon"><i>Nombre</i></span>
-              <input type="text"  name="nombre" pInputText placeholder="Ej.- Cable de alimentación" [(ngModel)]="this.articuloNuevo.Nombre"/>
+              <input type="text"  name="nombre"  placeholder="Ej.- Cable de alimentación" [(ngModel)]="this.articuloNuevo.Nombre"/>
             </div>
           </div>
         </div>
@@ -71,7 +75,7 @@
           <div class="col">
             <div class="p-inputgroup">
               <span class="p-inputgroup-addon"><i>Descripción</i></span>
-              <input type="text"  name="descripcion" pInputText placeholder="Ej.- Para monitores" [(ngModel)]="this.articuloNuevo.Descripcion"/>
+              <input type="text"  name="descripcion"  placeholder="Ej.- Para monitores" [(ngModel)]="this.articuloNuevo.Descripcion"/>
             </div>
           </div>
         </div>
@@ -81,13 +85,13 @@
           <div class="col">
             <div class="p-inputgroup">
               <span class="p-inputgroup-addon"><i>Precio unidad</i></span>
-              <input type="number"  name="precioUnidad" pInputText placeholder="Ej.- 3,65" [(ngModel)]="this.articuloNuevo.precioUnidad"/>
+              <input type="number"  name="precioUnidad"  placeholder="Ej.- 3,65" [(ngModel)]="this.articuloNuevo.precioUnidad"/>
               <span class="separador"></span>
               <span class="p-inputgroup-addon"><i>Unidades en stock</i></span>
-              <input type="number"  name="unidadesStock" pInputText placeholder="Ej.- 2.565" [(ngModel)]="this.articuloNuevo.unidadesStock"/>
+              <input type="number"  name="unidadesStock"  placeholder="Ej.- 2.565" [(ngModel)]="this.articuloNuevo.unidadesStock"/>
               <span class="separador"></span>
               <span class="p-inputgroup-addon"><i>Stock de seguridad</i></span>
-              <input type="number"  name="stockSeguridad" pInputText placeholder="Ej.- 65" [(ngModel)]="this.articuloNuevo.stockSeguridad"/>
+              <input type="number"  name="stockSeguridad"  placeholder="Ej.- 65" [(ngModel)]="this.articuloNuevo.stockSeguridad"/>
             </div>
           </div>
         </div>

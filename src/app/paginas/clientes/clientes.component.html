@@ -1,12 +1,25 @@
 <div class="card">
+
   <div class="flex flex-wrap card-container ">
     <div class="flex flex-row flex-wrap card-container">
       <!-- Columna izquierda para la listade clientes -->
-      <div class="flex align-items-center justify-content-center text-white border-round m-2">
 
-            <table responsiveLayout="scroll">
+
+
+
+      <div class="flex align-items-center justify-content-center text-white border-round m-2" >
+
+         <p-scrollPanel [style]="{width: '25p0x', height: '400px'}">
+
+          <!-- responsiveLayout="scroll"  -->
+            <table  responsiveLayout="stack">
+
               <caption><h2>Listado de clientes</h2></caption>
-              <thead>
+
+
+
+              <thead >
+
                   <tr>
                       <th>Cod. Cliente</th>
                       <th>Nombre</th>
@@ -19,8 +32,10 @@
                       <th>Fecha de nacimiento</th>
                       <th></th>
                   </tr>
-                </thead>
-                <tbody>
+              </thead>
+
+                <tbody >
+
                   <tr *ngFor="let item of this.servicio.clientes let i = index">
                       <td>{{item.codCliente}}</td>
                       <td>{{item.nombre}}</td>
@@ -49,9 +64,22 @@
                     ></button>
                       </td>
                   </tr>
+
                 </tbody>
-            </table>
-          </div>
+
+              </table>
+
+           </p-scrollPanel>
+
+        </div>
+
+
+
+
+
+
+
+
 
       <!-- Columna derecha para formulario-->
       <div class="flex align-items-center justify-content-center text-white border-round m-2" style="margin-left: 20px">

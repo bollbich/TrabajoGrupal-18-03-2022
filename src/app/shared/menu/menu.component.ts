@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuItem } from 'primeng/api';
+import {MenuItem} from 'primeng/api';
 
 @Component({
   selector: 'app-menu',
@@ -16,10 +16,8 @@ export class MenuComponent implements OnInit {
     ngOnInit()
     {
         this.items = [
-            {
-               label: 'Ir',
-               icon: 'pi pi-prime',
-               items:[
+            
+
                  {
                    label:'Inicio',
                    icon:'pi pi-align-left',
@@ -40,8 +38,8 @@ export class MenuComponent implements OnInit {
                  icon:'pi pi-shopping-cart',
                  routerLink:'compras'
                }
-               ]
-            }
+
+
         ];
     }
 

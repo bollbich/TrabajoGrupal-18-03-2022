@@ -16,6 +16,13 @@ import {DropdownModule} from 'primeng/dropdown';
 //División vertical con flex
 import {DividerModule} from 'primeng/divider';
 
+import { ScrollPanelModule } from 'primeng/scrollpanel';
+
+
+
+
+
+
 
 @NgModule({
   declarations: [],
@@ -33,7 +40,11 @@ import {DividerModule} from 'primeng/divider';
     TableModule,
     BrowserAnimationsModule,
     DropdownModule,
-    DividerModule
+    DividerModule,
+    ScrollPanelModule
+
+
+
 
   ],
   exports:[
@@ -49,7 +60,11 @@ import {DividerModule} from 'primeng/divider';
     TableModule,
     BrowserAnimationsModule,
     DropdownModule,
-    DividerModule
+    DividerModule,
+    ScrollPanelModule
+
+
+
   ]
 })
 export class PrimeNgModule { }
