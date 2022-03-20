@@ -53,9 +53,31 @@ public clienteNuevo:Cliente = {
     {
       codCliente: 1,
       nombre:'Olegario',
-      apellidos: 'fernandez gonzalez',
+      apellidos: 'Fernandez ',
       empresa: 'omicronia',
-      puesto: 'gerente jefe',
+      puesto: 'Gerente',
+      codigoPostal: 33300,
+      provincia: 'AsturLandia',
+      telefono: 675849302,
+      fechaNacimiento: new Date()
+    },
+    {
+      codCliente: 2,
+      nombre:'Pepito',
+      apellidos: 'Martinez',
+      empresa: 'Capgemini',
+      puesto: 'Piloto',
+      codigoPostal: 33300,
+      provincia: 'AsturLandia',
+      telefono: 675849302,
+      fechaNacimiento: new Date()
+    },
+    {
+      codCliente: 3,
+      nombre:'Juan',
+      apellidos: 'Landa',
+      empresa: 'CocaCola',
+      puesto: 'Repartidor',
       codigoPostal: 33300,
       provincia: 'AsturLandia',
       telefono: 675849302,
@@ -112,6 +134,24 @@ public clienteNuevo:Cliente = {
       unidadesStock: 100,
       stockSeguridad: 123,
       imagen: 'Imaginate un coco'
+    },
+    {
+      codArticulo: 2,
+      Nombre:'Manzana',
+      Descripcion: 'Verde y fruta',
+      precioUnidad: 1,
+      unidadesStock: 623,
+      stockSeguridad: 356,
+      imagen: 'Imaginate una manzana'
+    },
+    {
+      codArticulo: 3,
+      Nombre:'Sandía',
+      Descripcion: 'Grande y fruta',
+      precioUnidad: 2.5,
+      unidadesStock: 2563,
+      stockSeguridad: 3569,
+      imagen: 'Imaginate una sandía'
     }
     ];
 
@@ -153,7 +193,7 @@ public clienteNuevo:Cliente = {
 
   private _compras:Compra[] = [
     {
-      idCompra: 0,
+      idCompra: 1,
       articulo: {
         codArticulo: 1,
         Nombre:'Coco',

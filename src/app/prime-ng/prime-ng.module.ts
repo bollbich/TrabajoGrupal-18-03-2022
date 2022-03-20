@@ -13,6 +13,8 @@ import {SplitterModule} from 'primeng/splitter';
 import {TableModule} from 'primeng/table';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {DropdownModule} from 'primeng/dropdown';
+//División vertical con flex
+import {DividerModule} from 'primeng/divider';
 
 
 @NgModule({
@@ -30,7 +32,8 @@ import {DropdownModule} from 'primeng/dropdown';
     CardModule,
     TableModule,
     BrowserAnimationsModule,
-    DropdownModule
+    DropdownModule,
+    DividerModule
 
   ],
   exports:[
@@ -45,7 +48,8 @@ import {DropdownModule} from 'primeng/dropdown';
     CardModule,
     TableModule,
     BrowserAnimationsModule,
-    DropdownModule
+    DropdownModule,
+    DividerModule
   ]
 })
 export class PrimeNgModule { }
