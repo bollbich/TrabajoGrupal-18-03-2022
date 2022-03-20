@@ -215,6 +215,30 @@ public clienteNuevo:Cliente = {
         fechaNacimiento: new Date()
       },
       fecha: new Date()
+    },
+    {
+      idCompra: 2,
+      articulo: {
+        codArticulo: 3,
+        Nombre:'Sandía',
+        Descripcion: 'Grande y fruta',
+        precioUnidad: 2.5,
+        unidadesStock: 2563,
+        stockSeguridad: 3569,
+        imagen: 'Imaginate una sandía'
+      },
+      cliente: {
+        codCliente: 3,
+        nombre:'Juan',
+        apellidos: 'Landa',
+        empresa: 'CocaCola',
+        puesto: 'Repartidor',
+        codigoPostal: 33300,
+        provincia: 'AsturLandia',
+        telefono: 675849302,
+        fechaNacimiento: new Date()
+      },
+      fecha: new Date()
     }
     ];
 
@@ -249,5 +273,11 @@ public clienteNuevo:Cliente = {
   borrarCompra(compra:Compra)
   {
     this._compras = this._compras.filter(comp => comp !== compra);
+  }
+
+  buscarCompra(idCompra:number):Compra{
+    const existe = this._compras.filter(compr => compr.idCompra == idCompra);
+
+    return existe[0];
   }
 }

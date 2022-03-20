@@ -40,4 +40,19 @@ export class ClientesComponent implements OnInit {
   {
     this.servicio.agregarCliente(this.clienteNuevo);
   }
+
+  cargarCliente(cliente:Cliente){
+
+    this.clienteNuevo = {
+      codCliente: cliente.codCliente,
+      nombre: cliente.nombre,
+      apellidos: cliente.apellidos,
+      empresa: cliente.empresa,
+      puesto: cliente.puesto,
+      codigoPostal: cliente.codigoPostal,
+      provincia: cliente.provincia,
+      telefono: cliente.telefono,
+      fechaNacimiento: cliente.fechaNacimiento
+    }
+  }
 }

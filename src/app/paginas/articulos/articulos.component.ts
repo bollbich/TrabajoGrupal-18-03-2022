@@ -38,4 +38,16 @@ export class ArticulosComponent implements OnInit {
       this.servicio.borrarArticulo(articulo);
   }
 
+  cargarArticulo(articulo:Articulo){
+    this.articuloNuevo = {
+      codArticulo: articulo.codArticulo,
+      Nombre: articulo.Nombre,
+      Descripcion: articulo.Descripcion,
+      precioUnidad: articulo.precioUnidad,
+      unidadesStock: articulo.unidadesStock,
+      stockSeguridad: articulo.stockSeguridad,
+      imagen: articulo.imagen
+    };
+  }
+
 }

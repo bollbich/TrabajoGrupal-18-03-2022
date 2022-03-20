@@ -14,27 +14,6 @@ export class ComprasComponent implements OnInit {
   selectedClient:number = 0;
   selectedArticulo:number = 0;
 
-  // selectedClient:Cliente = {
-  //   codCliente: 0,
-  //   nombre:'',
-  //   apellidos: '',
-  //   empresa: '',
-  //   puesto: '',
-  //   codigoPostal: 0,
-  //   provincia: '',
-  //   telefono: 0,
-  //   fechaNacimiento: new Date()
-  // }
-  // selectedArticulo:Articulo = {
-  //   codArticulo: 0,
-  //     Nombre:'',
-  //     Descripcion: '',
-  //     precioUnidad: 0,
-  //     unidadesStock: 0,
-  //     stockSeguridad: 0,
-  //     imagen: ''
-  // }
-
   fecha:Date = new Date();
 
   idCompra:number = 0;
@@ -52,5 +31,14 @@ export class ComprasComponent implements OnInit {
   Delete(compra:Compra)
   {
     this.servicio.borrarCompra(compra);
+  }
+
+  cargarCompra(compra:Compra){
+   let compraSearch = this.servicio.buscarCompra(compra.idCompra);
+
+    this.idCompra = compraSearch.idCompra;
+    this.selectedClient = compraSearch.cliente.codCliente;
+    this.selectedArticulo = compraSearch.articulo.codArticulo;
+    this.fecha = compraSearch.fecha;
   }
 }
