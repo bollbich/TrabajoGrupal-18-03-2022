@@ -18,12 +18,6 @@ import {DividerModule} from 'primeng/divider';
 
 import { ScrollPanelModule } from 'primeng/scrollpanel';
 
-
-
-
-
-
-
 @NgModule({
   declarations: [],
   imports: [
@@ -42,10 +36,6 @@ import { ScrollPanelModule } from 'primeng/scrollpanel';
     DropdownModule,
     DividerModule,
     ScrollPanelModule
-
-
-
-
   ],
   exports:[
     ButtonModule,
